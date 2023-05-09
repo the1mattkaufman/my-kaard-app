@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Kaard App',
+      title: 'My Biz Card',
       theme: ThemeData(
         // This is the theme of your application.
         primarySwatch: Colors.blue,
@@ -68,7 +68,25 @@ class _MyKaardAppState extends State<MyKaardApp> {
                               SizedBox(
                                 height: 5,
                               ),
-                              Text('Business Leader',
+                              Text('Team Leader',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.italic,
+                                    fontSize: 20,
+                                  )),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text('Technical Architect',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.italic,
+                                    fontSize: 20,
+                                  )),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text('Entrepreneur',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
                                     fontStyle: FontStyle.italic,
