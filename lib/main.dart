@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_flutter/social_media_flutter.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'My Handles',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -22,10 +23,80 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.white,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyKaardApp(),
     );
+  }
+}
+
+class MyKaardApp extends StatefulWidget {
+  const MyKaardApp({super.key});
+
+  @override
+  State<MyKaardApp> createState() => _MyKaardAppState();
+}
+
+class _MyKaardAppState extends State<MyKaardApp> {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(),
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        CircleAvatar(
+                          radius: 100,
+                          backgroundImage: NetworkImage(
+                            'https://www.test.com'
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Matt Kaufman',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.teal,
+                            fontSize: 28,
+                          )
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Entrepreneur',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 20,
+                          )
+                        )
+                      ]
+                    )
+                  )
+                ),
+                const SizedBox(
+                  height: 5,
+                )
+              ],
+            )
+          ],
+        )
+        )
+    )
   }
 }
 
