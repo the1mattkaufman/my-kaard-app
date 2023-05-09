@@ -6,32 +6,27 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super(key: key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Handles',
+      title: 'My Kaard App',
       theme: ThemeData(
         // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.white,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyKaardApp(),
+      home: const MyKaardApp(
+        title: '',
+      ),
     );
   }
 }
 
 class MyKaardApp extends StatefulWidget {
-  const MyKaardApp({super.key});
+  const MyKaardApp({super.key, required this.title});
+  final String title;
 
   @override
   State<MyKaardApp> createState() => _MyKaardAppState();
@@ -59,7 +54,7 @@ class _MyKaardAppState extends State<MyKaardApp> {
                         CircleAvatar(
                           radius: 100,
                           backgroundImage: NetworkImage(
-                            'https://www.test.com'
+                            'https://avatars.githubusercontent.com/u/15354688?v=4'
                           ),
                         ),
                         SizedBox(
@@ -77,7 +72,7 @@ class _MyKaardAppState extends State<MyKaardApp> {
                           height: 5,
                         ),
                         Text(
-                          'Entrepreneur',
+                          'Business Leader',
                           style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.italic,
@@ -103,13 +98,38 @@ class _MyKaardAppState extends State<MyKaardApp> {
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(10,0),
+                          padding: const EdgeInsets.all(10.0),
                           child: SocialWidget(
                             placeholderText: 'the1mattkaufman',
                             iconData: SocialIconsFlutter.github,
                             iconColor: Colors.black,
                             iconSize: 24,
                             link: 'https://github.com/the1mattkaufman',
+                            placeholderStyle: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 18
+                            ),
+                          )
+                        ) 
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Container(
+                        height: 60,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.tealAccent,
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: SocialWidget(
+                            placeholderText: 'the1mattkaufman',
+                            iconData: SocialIconsFlutter.twitter,
+                            iconColor: Colors.blue,
+                            iconSize: 24,
+                            link: 'https://twitter.com/the1mattkaufman',
                             placeholderStyle: const TextStyle(
                               color: Colors.black,
                               fontSize: 18
