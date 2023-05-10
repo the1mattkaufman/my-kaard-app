@@ -111,6 +111,27 @@ class _MyKaardAppState extends State<MyKaardApp> {
                                 padding: const EdgeInsets.all(10.0),
                                 child: SocialWidget(
                                   placeholderText: 'the1mattkaufman',
+                                  iconData: SocialIconsFlutter.linkedin,
+                                  iconColor: Colors.blue,
+                                  iconSize: 24,
+                                  link: 'https://www.linkedin.com/in/the1mattkaufman',
+                                  placeholderStyle: const TextStyle(
+                                      color: Colors.black, fontSize: 18),
+                                ))),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                            height: 60,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.tealAccent,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: SocialWidget(
+                                  placeholderText: 'the1mattkaufman',
                                   iconData: SocialIconsFlutter.github,
                                   iconColor: Colors.black,
                                   iconSize: 24,
